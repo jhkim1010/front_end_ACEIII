@@ -1,9 +1,14 @@
 import React, {useState} from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import { useContext } from 'react';
+import userContext from './store/useUserState';
 
 import './Navbar.css'
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false); 
+
+  const { user } = useContext(userContext);
+  console.log(user); 
 
   return (
     <nav >
@@ -22,10 +27,12 @@ export default function Navbar() {
         <li><NavLink to="/Scontrol">SControl</NavLink></li>
         <li><NavLink to="/Codigocontrol">Codigo Control</NavLink></li>
         <li><NavLink to="/Clientecontrol">Cliente Control</NavLink></li>
-        {/* <li><Link to="/Scontrol">SControl</Link></li> */}
+              {/* <li><Link to="/Scontrol">SControl</Link></li> */}
       </ul>
       <ul>
-        <div className='logincheck'><h5>LogIn</h5></div>
+        <div className='logincheck'><h5>{user.username}</h5></div>
+        <span>${user.user_id}</span>
+        {/* <span>${user.company_id}</span> */}
       </ul>
     </nav>
   )

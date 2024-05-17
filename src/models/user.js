@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize'); 
-const {sequelize} = require('../database/database'); 
+const {sequelize} = require('../dbase/db'); 
 
 const User = sequelize.define('users', {   
     id_user: {
@@ -14,8 +14,13 @@ const User = sequelize.define('users', {
     }, 
     ref_id_company: {
         type: DataTypes.INTEGER,
+            allowNull: false
+    }, 
+    priority: {
+        type: DataTypes.INTEGER,
         allowNull: false
     }
+
 }, {
     timestamps: true 
 }); 

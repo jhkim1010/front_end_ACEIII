@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize'); 
-const {sequelize} = require('../database/database'); 
+const {sequelize} = require('../dbase/db'); 
 
 const Company = sequelize.define('companies', {   
     id_company: {
@@ -11,14 +11,21 @@ const Company = sequelize.define('companies', {
     companyname: {
         type: DataTypes.STRING,
         allowNull: false
-    }
+    }, 
+    security_key: {
+        type: DataTypes.STRING,
+        allowNull: false
+    }, 
+    num_sucursal: {
+        type: DataTypes.INTEGER
+    },
 }, {
     timestamps: true 
 }); 
 
-User.sync(); 
+Company.sync(); 
 // Codigo.sync({ force: false }).then(() => {
 //     console.log('Table created');
 // }); 
 
-module.exports = User;
+module.exports = Company;

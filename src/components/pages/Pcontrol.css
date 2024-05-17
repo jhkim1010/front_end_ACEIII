@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100vw;
+  height: 90vh;
+  margin: 0px;
+  padding: 10px;
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 50px 250px auto 100px;
+  grid-template-areas:
+    "main           busqueda"
+    "main           color"
+    "main           codigo-list"
+    "nuevo-ingreso  buttons";
+}
+
+.main {
+  grid-area: main;
+}
+
+.busqueda {
+  grid-area: busqueda;
+}
+
+.color {
+  grid-area: color;
+}
+
+.codigo-list {
+  grid-area: codigo-list;
+}
+
+.nuevo-ingreso {
+  grid-area: nuevo-ingreso;
+}
+
+.buttons {
+  grid-area: buttons;
+}

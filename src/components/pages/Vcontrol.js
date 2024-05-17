@@ -1,22 +1,23 @@
 import React from 'react'
+import './Vcontrol.css'
 
 function Vcontrol() {
   return (
-    <div>
-      <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis mollitia iste veniam eius quasi, enim distinctio perspiciatis cupiditate eveniet praesentium? Aut quisquam alias in ipsa illo. Voluptatibus nam suscipit, sed laudantium aliquam laboriosam ullam eveniet. Magni id ab cumque possimus qui quisquam facilis, exercitationem ut ex fugit est blanditiis dolor explicabo quasi tempore cupiditate odit voluptatibus quaerat unde autem suscipit aperiam. Repellendus ipsum, molestiae nihil ipsa sequi eaque delectus quis nisi! Minus, eveniet ratione vel a accusamus placeat sunt aspernatur. Dignissimos placeat corporis veritatis amet ullam optio aut sed, perspiciatis eveniet, eligendi repudiandae laboriosam accusamus quos. Sed debitis inventore rerum!</div>
-      <br />
-      <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis mollitia iste veniam eius quasi, enim distinctio perspiciatis cupiditate eveniet praesentium? Aut quisquam alias in ipsa illo. Voluptatibus nam suscipit, sed laudantium aliquam laboriosam ullam eveniet. Magni id ab cumque possimus qui quisquam facilis, exercitationem ut ex fugit est blanditiis dolor explicabo quasi tempore cupiditate odit voluptatibus quaerat unde autem suscipit aperiam. Repellendus ipsum, molestiae nihil ipsa sequi eaque delectus quis nisi! Minus, eveniet ratione vel a accusamus placeat sunt aspernatur. Dignissimos placeat corporis veritatis amet ullam optio aut sed, perspiciatis eveniet, eligendi repudiandae laboriosam accusamus quos. Sed debitis inventore rerum!</div>
-      <br />
-      <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis mollitia iste veniam eius quasi, enim distinctio perspiciatis cupiditate eveniet praesentium? Aut quisquam alias in ipsa illo. Voluptatibus nam suscipit, sed laudantium aliquam laboriosam ullam eveniet. Magni id ab cumque possimus qui quisquam facilis, exercitationem ut ex fugit est blanditiis dolor explicabo quasi tempore cupiditate odit voluptatibus quaerat unde autem suscipit aperiam. Repellendus ipsum, molestiae nihil ipsa sequi eaque delectus quis nisi! Minus, eveniet ratione vel a accusamus placeat sunt aspernatur. Dignissimos placeat corporis veritatis amet ullam optio aut sed, perspiciatis eveniet, eligendi repudiandae laboriosam accusamus quos. Sed debitis inventore rerum!</div>
-      <br />
-      <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis mollitia iste veniam eius quasi, enim distinctio perspiciatis cupiditate eveniet praesentium? Aut quisquam alias in ipsa illo. Voluptatibus nam suscipit, sed laudantium aliquam laboriosam ullam eveniet. Magni id ab cumque possimus qui quisquam facilis, exercitationem ut ex fugit est blanditiis dolor explicabo quasi tempore cupiditate odit voluptatibus quaerat unde autem suscipit aperiam. Repellendus ipsum, molestiae nihil ipsa sequi eaque delectus quis nisi! Minus, eveniet ratione vel a accusamus placeat sunt aspernatur. Dignissimos placeat corporis veritatis amet ullam optio aut sed, perspiciatis eveniet, eligendi repudiandae laboriosam accusamus quos. Sed debitis inventore rerum!</div>
-      <br />
-      <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis mollitia iste veniam eius quasi, enim distinctio perspiciatis cupiditate eveniet praesentium? Aut quisquam alias in ipsa illo. Voluptatibus nam suscipit, sed laudantium aliquam laboriosam ullam eveniet. Magni id ab cumque possimus qui quisquam facilis, exercitationem ut ex fugit est blanditiis dolor explicabo quasi tempore cupiditate odit voluptatibus quaerat unde autem suscipit aperiam. Repellendus ipsum, molestiae nihil ipsa sequi eaque delectus quis nisi! Minus, eveniet ratione vel a accusamus placeat sunt aspernatur. Dignissimos placeat corporis veritatis amet ullam optio aut sed, perspiciatis eveniet, eligendi repudiandae laboriosam accusamus quos. Sed debitis inventore rerum!</div>
-      <br />
-      <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis mollitia iste veniam eius quasi, enim distinctio perspiciatis cupiditate eveniet praesentium? Aut quisquam alias in ipsa illo. Voluptatibus nam suscipit, sed laudantium aliquam laboriosam ullam eveniet. Magni id ab cumque possimus qui quisquam facilis, exercitationem ut ex fugit est blanditiis dolor explicabo quasi tempore cupiditate odit voluptatibus quaerat unde autem suscipit aperiam. Repellendus ipsum, molestiae nihil ipsa sequi eaque delectus quis nisi! Minus, eveniet ratione vel a accusamus placeat sunt aspernatur. Dignissimos placeat corporis veritatis amet ullam optio aut sed, perspiciatis eveniet, eligendi repudiandae laboriosam accusamus quos. Sed debitis inventore rerum!</div>
-      <br />
-    </div>
-  )
+    <main>
+      <div className='container_vcontrol'>
+
+        <div className="item cliente-elegido  color1">cliente actual</div>
+        <div className="item metodo-de-pago   color2">metodo de pago</div>
+        <div className="item clientlist_v       color3">clients total list</div>
+        <div className="item list_items_venta_v color4">list-items-venta</div>
+        <div className="item color_table_v      color5">color-table</div>
+        <div className="item date_time_v        color1">date & time</div>
+        <div className="item item_pic_v         color2">item picture</div>
+        <div className="item fila-de-cobranza color3">fila de cobranza</div>
+
+      </div>
+
+    </main>)
 }
 
-export default Vcontrol
+export default Vcontrol; 

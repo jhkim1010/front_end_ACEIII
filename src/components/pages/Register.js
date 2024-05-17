@@ -1,14 +1,16 @@
 import React, {useRef, useState, useEffect} from 'react'
+import {Link } from 'react-router-dom'
 // import {faCheck, faTimes, faInfoCircle}   from "@fortawesome/free-brands-svg-icons"
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import CheckIcon from '@mui/icons-material/Check';
 import InfoIcon from '@mui/icons-material/Info';
 import CloseIcon from '@mui/icons-material/Close';
-import axios from '../api/axios'
+// import { Co2Sharp } from '@mui/icons-material';
+// import axios from '../api/axios' 
 
-const USER_REGEX = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{3,23}$/; 
+const USER_REGEX = /^[a-z0-9._%+-]+@[a-z0-9.-]{3,23}$/; 
 const PWD_REGEX  = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,24}$/; 
-const REGISTER_URL = '/register'
+// const REGISTER_URL = '/register'
 
 function Register() {
   const userRef = useRef(); 
@@ -58,38 +60,65 @@ function Register() {
     e.preventDefault(); 
     const v1 = USER_REGEX.test(user); 
     const v2 = PWD_REGEX.test(pwd); 
+    console.log("Username valid:", v1, "Password valid:", v2);
+
     if(!v1 || !v2) {
+      console.log("Invalid Entry"); 
       setErrMsg("Invalid Entry"); 
       return; 
     }
 
-    // 데이터 베이스에 기록한다. 
-    try {
-      const response = await axios.post(REGISTER_URL, JSON.stringify({user, pwd}), 
-                      {
-                        headers : {'Content-Type' : 'application/json'}, 
-                        withCredentials : true
-                      }
-                    );
-                    console.log(response.data); 
-                    console.log(response.accessToken); 
-                    console.log(JSON.stringify(response)); 
-                    setSuccess(true); 
+    console.log(JSON.stringify({user, pwd})); 
 
-                    // clear 
-                    setUser(""); 
-                    setPwd(""); 
-    } catch(err) {
-      if(!err?.response) {
-        setErrMsg("No server respons"); 
-      } else if (err.response?.status === 409) {
-        setErrMsg("Username already Taken"); 
-      } else {
-        setErrMsg("Register Failed")
+    try {
+      console.log("try to send"); 
+      const response = await fetch("http://localhost:4000/auth/signup", {
+        method: "POST", 
+        credentials: "include", 
+        headers: {'Content-Type': 'application/json'}, 
+        body: JSON.stringify({
+          username : user, 
+          pwd : pwd
+        }) 
+      });
+  
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
       }
-      errRef().current.focus(); 
+  
+      const data = await response.json();
+      console.table(data); 
+      setSuccess(true); 
+  
+      setUser(""); 
+      setPwd(""); 
+    } catch (err) {
+      console.error(err);
+      setErrMsg("Failed to register");
     }
-  }
+    // // 데이터 베이스에 기록한다. 
+    // await fetch("http://localhost:4000/auth/register",  
+    //   {
+    //     method: "POST", 
+    //     credentials : "include", 
+    //     headers : {'Content-Type' : 'application/json'}, 
+    //     body : JSON.stringify({user, pwd}) 
+    //   }).catch(err => {
+    //     console.error(err)
+    //   }).then(res => {
+    //     if(!res || !res.ok || res.status >= 400) {return;}
+    //     else return res.json(); 
+  
+    //   }).then(data => {
+    //     if(!data) return; 
+    //     console.table(data); 
+    //     setSuccess(true); 
+
+    //     // clear 
+    //     setUser(""); 
+    //     setPwd(""); 
+    //   });
+    }
 
   return (
 
@@ -97,7 +126,7 @@ function Register() {
   {success? (
       <section>
         <h1>Succes!</h1>
-        <a href="#">Log In</a>
+        <Link to = "/">Log In</Link>
       </section>
       ): (
       <section>
@@ -191,14 +220,14 @@ function Register() {
             Not matched yet <br />
            </p> 
   
-           <button disabled = {!validName || !validPwd || !validPwd2 ? true : false} >
+           <button disabled = {!validName || !validPwd || !validPwd2 ? true : false} onClick={handleSubmit}>
             Sign Up
            </button>
   
            <p>
             Already registerd? <br />
             <span className='line'>
-              <a href="#">Sign In</a>
+              <Link to="/">Sign In</Link>
             </span>
            </p>
         </form>
