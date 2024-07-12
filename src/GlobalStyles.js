@@ -1,0 +1,25 @@
+import { createGlobalStyle } from 'styled-components';
+
+export const GlobalStyles = createGlobalStyle`
+
+.color1 {
+  background-color: lightblue;
+}
+
+.color2 {
+  background-color: lightgreen;
+}
+
+.color3 {
+  background-color: lightyellow;
+}
+
+.color4 {
+  background-color: lightpink;
+}
+
+.color5 {
+  background-color: lightgray;
+}
+`
+

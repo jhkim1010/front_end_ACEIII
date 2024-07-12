@@ -6,12 +6,13 @@ section {
     font-size: 22px;
     max-width: 420px;
     min-height: 400px;
+    margin-top: 5rem;
     margin: auto;
     flex-direction: column;
     justify-content: space-between;
     padding: 2rem;
     border-radius: 20px;
-    background-color: rgba(32, 11, 224, 0.4);
+    background-color: rgba(11, 149, 224, 0.4);
 }
 
 form {

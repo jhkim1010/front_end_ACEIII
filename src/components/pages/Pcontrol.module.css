@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-.container {
+.container_p {
   width: 100vw;
   height: 90vh;
   margin: 0px;
@@ -19,6 +19,17 @@
     "main           codigo-list"
     "nuevo-ingreso  buttons";
 }
+
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
 
 .main {
   grid-area: main;
@@ -42,4 +53,24 @@
 
 .buttons {
   grid-area: buttons;
+}
+
+.color1 {
+  background-color: lightblue;
+}
+
+.color2 {
+  background-color: lightgreen;
+}
+
+.color3 {
+  background-color: lightyellow;
+}
+
+.color4 {
+  background-color: lightpink;
+}
+
+.color5 {
+  background-color: lightgray;
 }

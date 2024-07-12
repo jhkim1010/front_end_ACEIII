@@ -13,6 +13,7 @@ import Home from './components/pages/Home'
 import userContext from './components/store/useUserState';
 import { useState, useContext , useEffect} from 'react';
 import jsCookie from 'js-cookie'; 
+import { GlobalStyles } from './GlobalStyles'
 
 function App() {
   const { user, setUser } = useContext(userContext);
@@ -25,12 +26,14 @@ function App() {
 
   return (
     <div className="App">
+            <GlobalStyles/>
       <BrowserRouter>
         <Navbar username={user.username} />
         {!user.username ?
           (
             <Routes>
               <Route path="/" element={<Login />} />
+              <Route path="/register" element={<Register />} />
               {/* <Route path="/login" element={<Login />} /> */}
             </Routes>
           ) : (
